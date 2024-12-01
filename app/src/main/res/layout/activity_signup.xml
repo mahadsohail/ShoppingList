@@ -1,0 +1,76 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/cream"
+    android:gravity="center">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="-200dp"
+        android:text="SIGNUP"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_green_light"
+        tools:ignore="HardcodedText" />
+
+
+    <EditText
+        android:id="@+id/signupEmailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Enter email"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:hapticFeedbackEnabled="true"
+        android:backgroundTint="@color/black"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/signupPasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Enter password"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:backgroundTint="@color/black"
+        android:hapticFeedbackEnabled="true"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/signupConfirmPasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Confirm password"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:backgroundTint="@color/black"
+        android:hapticFeedbackEnabled="true"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textSize="20sp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        tools:ignore="HardcodedText" />
+</LinearLayout>

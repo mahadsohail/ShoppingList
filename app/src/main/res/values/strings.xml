@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ShoppingList</string>
+    <string name="item_name">Item Name</string>
+    <string name="quantity_0">Quantity: 0</string>
+    <string name="price_rs0_0">Price: Rs0.0</string>
+    <string name="delete">Delete</string>
+</resources>
