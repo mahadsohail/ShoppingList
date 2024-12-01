@@ -11,7 +11,7 @@
         android:id="@+id/nameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/item_name"
+        android:text="Item Name"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -19,18 +19,18 @@
         android:id="@+id/quantityTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/quantity_0" />
+        android:text="Quantity: 0" />
 
     <TextView
         android:id="@+id/priceTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/price_rs0_0" />
+        android:text="Price: Rs 0.0" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/delete"
+        android:text="Delete"
         android:layout_gravity="end" />
 </LinearLayout>

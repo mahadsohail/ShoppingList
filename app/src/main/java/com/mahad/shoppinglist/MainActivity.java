@@ -6,10 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
@@ -37,6 +39,17 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new ItemAdapter(options);
         recyclerView.setAdapter(adapter);
+
+        // Debug Firebase query
+        FirebaseDatabase.getInstance().getReference("items").get()
+                .addOnSuccessListener(snapshot -> {
+                    if (snapshot.exists()) {
+                        Log.d("Firebase", "Items fetched: " + snapshot.getChildrenCount());
+                    } else {
+                        Log.d("Firebase", "No items found in database.");
+                    }
+                })
+                .addOnFailureListener(e -> Log.e("Firebase", "Error fetching items", e));
     }
 
     @Override
@@ -91,9 +104,6 @@ public class MainActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Toast.makeText(MainActivity.this, "Item added successfully!", Toast.LENGTH_SHORT).show();
                                 Log.d("MainActivity", "Item added to Firebase with ID: " + itemId);
-
-                                // Refresh the adapter's data
-                                adapter.notifyDataSetChanged();  // Force RecyclerView to refresh its data
                             } else {
                                 Toast.makeText(MainActivity.this, "Failed to add item", Toast.LENGTH_SHORT).show();
                             }
@@ -101,11 +111,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
 
         builder.create().show();
     }
-
-
 }

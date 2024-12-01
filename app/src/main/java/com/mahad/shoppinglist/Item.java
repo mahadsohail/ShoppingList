@@ -4,7 +4,6 @@ public class Item {
     private String name;
     private int quantity;
     private double price;
-    private int id;
 
     // Empty constructor required for Firebase
     public Item() {}
@@ -15,16 +14,29 @@ public class Item {
         this.price = price;
     }
 
-    public String getName() { return name; }
-    public int getQuantity() { return quantity; }
-    public double getPrice() { return price; }
-
-
-    public void setId(int id) {
-        this.id = id;
+    // Getters
+    public String getName() {
+        return name;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
 
+    public double getPrice() {
+        return price;
+    }
 
+    // Setters (if required for updating fields later)
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }
